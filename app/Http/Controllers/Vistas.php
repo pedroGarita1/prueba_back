@@ -7,24 +7,51 @@ use Illuminate\Http\Request;
 
 class Vistas extends Controller
 {
-    public function index(){
+    public function index()
+    {
+        // Título para la página
         $titulo = 'inicio';
+
+        // Obtener todos los usuarios de la base de datos
         $usuario = User::all();
-        return view('inicio', compact('titulo','usuario'));
+
+        // Renderizar la vista 'inicio' y pasar datos
+        return view('inicio', compact('titulo', 'usuario'));
     }
-    public function ver_usuario($id){
+
+    public function ver_usuario($id)
+    {
+        // Título para la página
         $titulo = 'Ver usuario';
-        $usuario = User::where('id',$id)->first();
-        return view('modules/ver_usuario',compact('titulo','usuario'));
+
+        // Buscar un usuario por su ID
+        $usuario = User::where('id', $id)->first();
+
+        // Renderizar la vista 'ver_usuario' y pasar datos
+        return view('modules/ver_usuario', compact('titulo', 'usuario'));
     }
-    public function edit_usuario($id){
+
+    public function edit_usuario($id)
+    {
+        // Título para la página
         $titulo = 'Editar usuario';
-        $usuario = User::where('id',$id)->first();
-        return view('modules/edit_usuario',compact('titulo','usuario'));
+
+        // Buscar un usuario por su ID
+        $usuario = User::where('id', $id)->first();
+
+        // Renderizar la vista 'edit_usuario' y pasar datos
+        return view('modules/edit_usuario', compact('titulo', 'usuario'));
     }
-    public function delete_usuario($id){
+
+    public function delete_usuario($id)
+    {
+        // Título para la página
         $titulo = 'Eliminar usuario';
-        $usuario = User::where('id',$id)->first();
-        return view('modules/delete_usuario',compact('titulo','usuario'));
+
+        // Buscar un usuario por su ID
+        $usuario = User::where('id', $id)->first();
+
+        // Renderizar la vista 'delete_usuario' y pasar datos
+        return view('modules/delete_usuario', compact('titulo', 'usuario'));
     }
 }
