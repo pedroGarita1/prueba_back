@@ -18,4 +18,18 @@ class UsuariosController extends Controller
         $usuario->save();
         return redirect()->back();
     }
+    public function update_usuario(Request $request, $id){
+        ValidateController::update_usuario_validate($request);
+        $usuario = User::find($id);
+        $usuario->name = $request->nombre;
+        $usuario->email = $request->email;
+        $usuario->fecha_nacimiento = $request->fecha_nacimiento;
+        $usuario->save();
+        return redirect()->route('Vistas-inicio');
+    }
+    public function destroy_usuario($id){
+        $usuario = User::find($id);
+        $usuario->delete();
+        return redirect()->route('Vistas-inicio');
+    }
 }
