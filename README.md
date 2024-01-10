@@ -24,8 +24,8 @@ Instalacion de NPM
 
 ## 3.- Configuracion del .env
 
-Copia y pega el .env.example en la raiz del proyecto y sustituye el nombre con solo .env
-Posterior mente abre el archivo y coloca en el apartado de DB_CONNECTION=mysql el <strong>DB_DATABASE=prueba_back</strong>
+Copia y pega el .env.example en la raiz del proyecto y sustituye el nombre con solo .env <br>
+Posterior mente abre el archivo y coloca en el apartado de <strong>DB_CONNECTION=mysql</strong> el <strong>DB_DATABASE=prueba_back</strong>
 
 ## 4.- Configuracion de la app key
 
